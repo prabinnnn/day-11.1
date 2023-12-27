@@ -1,11 +1,12 @@
-function checkstring(num) {
-  if (num.string === 0) {
-    console.log("invalid.please enter new sring");
+function checkString(inputString) {
+  if (typeof inputString !== "string" || inputString.length === 0) {
+    console.log("Invalid input. Please enter a non-empty string.");
   }
-  try {
-    checkstring("hello");
-    checkstring("");
-  } catch (error) {
-    console.log("error message");
-  }
+}
+
+try {
+  checkString("hello"); // This will not log anything
+  checkString(""); // This will log the error message
+} catch (error) {
+  console.log("Caught an error: " + error.message);
 }
